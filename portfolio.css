@@ -1,0 +1,145 @@
+body
+{
+    margin: 0px auto;
+    background-color: beige;
+    display: grid;
+
+}
+
+/* header page stuff */
+header
+{
+    background-color: lightblue;
+    padding: 10px;
+    border: 2px solid black;
+    font-size: larger;
+}
+
+header h1
+{
+    text-align: center;
+}
+
+header ul
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+header ul li
+{
+    padding: 10px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+header ul a
+{
+    color: black;
+    text-decoration: none;
+}
+
+main
+{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-size: 18px;
+}
+
+.about-section
+{
+    grid-column: 2 / span 2;
+    grid-row: 1;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.photo
+{
+    grid-column: 1 / span 1;
+    grid-row: 1;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.projects-with-header
+{
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 2;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+aside
+{
+    grid-column: 3;
+    grid-row: 2;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.projects-section
+{
+    display: flex;
+    gap: 20px;
+    align-content: space-between;
+}
+
+.contact-section
+{
+    grid-column: 3;
+    grid-row: 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.contact-section h2
+{
+    grid-column: 1 / span 2;
+    grid-row: 1;
+}
+
+.contact-section form
+{
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 2;
+}
+
+.contact-section form .name
+{
+    
+}
+
+.contact-section form .email
+{
+    
+}
+
+.contact-section form .message textarea
+{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+
+footer
+{
+    background-color: lightblue;
+    border: 2px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+.socials
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    gap: 5px;
+}
