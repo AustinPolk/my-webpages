@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 
-<html lan="en">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="portfolio.css">
         <title>Austin Polk's Amazing Portfolio</title>
     </head>
     <body>
@@ -16,7 +17,7 @@
                             <a href="#about-section">About</a>
                         </li>
                         <li>
-                            <a href="#project-section">Projects</a>
+                            <a href="#projects-section">Projects</a>
                         </li>
                         <li>
                             <a href="#contact-section">Contact</a>
@@ -40,76 +41,89 @@
                         decision making. Whether it's mundane or monumental, I want to help where I 
                         can.
                     </section>
+                </div>
+                <div class="photo">
                     <figure>
-                        <img src="https://via.placeholder.com/150", alt="Photo of Austin Polk">
+                        <img src="https://media.licdn.com/dms/image/v2/D5603AQE16Rlq7kFk5Q/profile-displayphoto-shrink_400_400/B56ZedgHAZG0Ag-/0/1750694131048?e=1760572800&v=beta&t=yEjai7F-0P7PGhz6BhF0n5J_8VaKumbwiMzFUmYB4fs", alt="Photo of Austin Polk">
                         <figcaption>Austin Polk, 2025</figcaption>
                     </figure>
                 </div>
-                <div class="projects-section" id="projects-section">
+                <div class="projects-with-header" id="projects-section">
                     <h2>Projects</h2>
-                    <article class="project">
-                        <h3>4CasTX</h3>
-                        <p>
-                            I worked on this project during senior design as a sort of capstone. Me and 
-                            my team implemented the front- and backend for an app that forecasts the
-                            weather for multiple counties in North Texas. My main contribution was toward
-                            the prediction algorithm that created forecasts. Although fairly rudimentary,
-                            it inspired me to focus on forecasting as a potential research avenue for
-                            my personal projects and career.
-                        </p>
-                        <a href="https://github.com/AustinPolk/4CasTX">Link to project</a>
-                        <h4>Features</h4>
-                        <ul>
-                            <li>Interactive GUI</li>
-                            <li>Multi-day forecasts</li>
-                            <li>Multiple forecast variables</li>
-                        </ul>
-                    </article>
-                    <article class="project">
-                        <h3>MovieRecs</h3>
-                        <p>
-                            I created this project during my Natural Language Processing class. It features
-                            a basic console interface wherein a user answers questions about movie 
-                            preferences and receives recommendations. While the user interaction definitely
-                            needs some work, what I'm most proud of is the recommendation system. It pulls
-                            the most relevant parts of user input and interacts with a movie database to
-                            query for movies the user might like. In the future, I'd like to return to this
-                            project and make it a fully-fledged, although simple, web app.
-                        </p>
-                        <a href="https://github.com/AustinPolk/MovieRecs">Link to project</a>
-                        <h4>Features</h4>
-                        <ul>
-                            <li>Natural language interaction</li>
-                            <li>Database of thousands of movies</li>
-                            <li>Machine learning-powered recommendations</li>
-                        </ul>
-                    </article>
+                    <div class="projects-section">
+                        <article class="project">
+                            <h3>4CasTX</h3>
+                            <p>
+                                I worked on this project during senior design as a sort of capstone. Me and 
+                                my team implemented the front- and backend for an app that forecasts the
+                                weather for multiple counties in North Texas. My main contribution was toward
+                                the prediction algorithm that created forecasts. Although fairly rudimentary,
+                                it inspired me to focus on forecasting as a potential research avenue for
+                                my personal projects and career.
+                            </p>
+                            <a href="https://github.com/AustinPolk/4CasTX">Link to project</a>
+                            <h4>Features</h4>
+                            <ul>
+                                <li>Interactive GUI</li>
+                                <li>Multi-day forecasts</li>
+                                <li>Multiple forecast variables</li>
+                            </ul>
+                        </article>
+                        <article class="project">
+                            <h3>MovieRecs</h3>
+                            <p>
+                                I created this project during my Natural Language Processing class. It features
+                                a basic console interface wherein a user answers questions about movie 
+                                preferences and receives recommendations. While the user interaction definitely
+                                needs some work, what I'm most proud of is the recommendation system. It pulls
+                                the most relevant parts of user input and interacts with a movie database to
+                                query for movies the user might like. In the future, I'd like to return to this
+                                project and make it a fully-fledged, although simple, web app.
+                            </p>
+                            <a href="https://github.com/AustinPolk/MovieRecs">Link to project</a>
+                            <h4>Features</h4>
+                            <ul>
+                                <li>Natural language interaction</li>
+                                <li>Database of thousands of movies</li>
+                                <li>Machine learning-powered recommendations</li>
+                            </ul>
+                        </article>
+                    </div>
                 </div>
                 <div class="contact-section" id="contact-section">
                     <h2>Contact</h2>
                     <form action="#", method="POST">
-                        <label for="name-input">Name:</label>
-                        <input id="name-input" type="text" placeholder="Your name">
-                        <label for="email-input">Email:</label>
-                        <input id="email-input" type="email" placeholder="your.name@gmail.com">
-                        <label for="message-input">Message:</label>
-                        <textarea id="message-input" placeholder="What do you want to say?"></textarea>
+                        <div class="name">
+                            <label for="name-input">Name:</label>
+                            <input id="name-input" type="text" placeholder="Your name">
+                        </div>
+                        <div class="email">
+                            <label for="email-input">Email:</label>
+                            <input id="email-input" type="email" placeholder="your.name@gmail.com">
+                        </div>
+                        <div class="message">
+                            <label for="message-input">Message:</label>
+                            <textarea id="message-input" placeholder="What do you want to say?"></textarea>
+                        </div>
                         <button type="submit">Contact me!</button>
                     </form>
                 </div>
+                <aside>
+                    <div class="self-advertisement">
+                        <h2>Need help on a project?</h3>
+                        <p>
+                            Leverage my skills and your ideas to create next-level projects in any field.
+                            Compensation differs based on scale and scope of work required. Reach out and
+                            we can discuss the future of your next big idea!
+                        </p>
+                    </div>
+                </aside>
             </main>
-            <aside>
-                <div class="self-advertisement">
-                    <h2>Need help on a project?</h3>
-                    <p>
-                        Leverage my skills and your ideas to create next-level projects in any field.
-                        Compensation differs based on scale and scope of work required. Reach out and
-                        we can discuss the future of your next big idea!
-                    </p>
-                </div>
-            </aside>
             <footer>
-                <a href="https://linkedin.com">My LinkedIn</a>
+                <div class="socials">
+                    <a href="https://www.linkedin.com/in/austin-polk/">LinkedIn</a>
+                    <a href="https://github.com/AustinPolk">GitHub</a>
+                </div>
                 <p>&copy 2025 Austin Polk. All rights reserved.</p>
             </footer>
         </div>
