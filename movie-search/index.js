@@ -112,7 +112,7 @@ function create_index_movie_card(title,
 
 async function query_omdb(query_str)
 {
-    const url = 'http://www.omdbapi.com';
+    const url = 'https://www.omdbapi.com';
     const apikey = `apikey=${OMDb_APIKEY}`;
     const s = `s=${query_str}`;
     const type = 'type=movie';
@@ -126,7 +126,7 @@ async function query_omdb(query_str)
 
 async function query_additional_info_for_movie(imdbId)
 {
-    const url = 'http://www.omdbapi.com';
+    const url = 'https://www.omdbapi.com';
     const apikey = `apikey=${OMDb_APIKEY}`;
     const i = `i=${imdbId}`;
     const type = 'type=movie';
