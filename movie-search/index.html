@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Search</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header>
+    <h1>Movie Search</h1>
+    
+    <nav>
+      <a href="watchlist.html">My Watchlist</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="search">
+      <input type="text" id="searchInput" placeholder="Enter movie title...">
+      <button id="searchBtn">Search</button>
+    </section>
+
+    <section id="movie-list-section" class="movie-list">
+      <!--<p>Search for a movie!</p>-->
+    </section>
+  </main>
+
+  <script src="index.js"></script>
+  <script src="watchlist.js"></script>
+
+  <script>
+    async function query_on_click()
+    {
+      console.log('clearing current movie list');
+      reset_movie_list();
+
+      console.log('getting search results via omdb api');
+      const search_input = document.getElementById('searchInput');
+      const query_text = search_input.value;
+
+      console.log(`using query ${query_text}`);
+      const query_results = await query_omdb(query_text);
+      
+      for (let i = 0; i < 10; i++)
+      {
+        const result = query_results.Search[i];
+
+        console.log(result)
+        const title = result.Title;
+        const year = result.Year;
+        const imdbID = result.imdbID;
+        const posterSrc = result.Poster;
+
+        const additionalInfo = await query_additional_info_for_movie(imdbID);
+        const plot_summary = additionalInfo.Plot;
+
+        const movie_card = create_index_movie_card(title, 
+          imdbID, 
+          year, 
+          plot_summary, 
+          posterSrc, 
+          imdbId_is_present_in_watchlist(imdbID),
+          (movie) => add_to_watchlist(movie));
+        add_to_movie_list(movie_card);
+      }
+    }
+
+    const searchButton = document.getElementById('searchBtn');
+    searchButton.addEventListener('click', query_on_click);
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Watchlist</title>
+  <link rel="stylesheet" href="watchlist.css">
+</head>
+<body>
+  <header>
+    <h1>My Watchlist</h1>
+    
+    <nav>
+      <a href="index.html">Back To Search</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="clear-watchlist">
+      <button id="clearBtn">Clear Watchlist</button>
+    </section>
+
+    <section id="watchlist-section" class="movie-list">
+     
+    </section>
+  </main>
+
+  <script src="watchlist.js"></script>
+
+  <script>
+
+    const clear_button = document.getElementById('clearBtn');
+    clear_button.addEventListener('click', () => {
+      init_watchlist();
+      window.location.reload();
+    })
+
+    const watchlist = get_or_create_watchlist();
+    const movies = watchlist.movies;
+
+    const watchlist_section = get_watchlist_section();
+
+    for (let i = 0; i < watchlist.movies.length; i++)
+    {
+      const movie_card = create_watchlist_movie_card(watchlist.movies[i]);
+      watchlist_section.appendChild(movie_card); 
+    }
+
+  </script>
+</body>
+</html>

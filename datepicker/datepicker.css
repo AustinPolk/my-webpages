@@ -1,0 +1,74 @@
+body
+{
+    background-color: beige;
+}
+
+table
+{
+    background-color:burlywood;
+    width: 200px;
+}
+
+.calendar-div
+{
+    border: 2px;
+    border-color: black;
+}
+
+.nav-row
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.month-display
+{
+    flex-grow: 1;
+    width: 150px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.nav-last-month
+{
+    flex-grow: 1;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.nav-next-month
+{
+    flex-grow: 1;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.weekday-header
+{
+    background-color: gold;
+}
+
+.weekday-header-cell
+{
+    text-align: center;
+}
+
+.day-last-month
+{
+    text-align: center;
+    background-color: grey;
+}
+
+.day-this-month
+{
+    text-align: center;
+    background-color: white;
+    cursor: pointer;
+}
+
+.day-next-month
+{
+    text-align: center;
+    background-color: grey;
+}
