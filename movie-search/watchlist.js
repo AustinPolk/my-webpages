@@ -38,7 +38,7 @@ function add_to_watchlist(movie)
     set_watchlist(watchlist);
 }
 
-function create_watchlist_movie_card(movie)
+function create_watchlist_movie_card(movie, remove_callback)
 {
     // get the relevant info from the stored movie object
     const title = movie._title;
@@ -78,6 +78,26 @@ function create_watchlist_movie_card(movie)
     movie_plot.textContent = plot_summary;
     movie_info.appendChild(movie_plot);
     
+    const remove_button = document.createElement('button');
+    remove_button.setAttribute('class', 'remove-btn');
+    remove_button.textContent = '-';
+
+    const button_label = document.createElement('label');
+    button_label.textContent = 'Remove from watchlist';
+    
+    // when clicking the button, remove this movie from the watchlist
+    remove_button.addEventListener('click', () => {
+        remove_callback(movie_card);
+        const watchlist = get_watchlist();
+        const index = index_of_imdbId_in_watchlist(imdbId);
+        watchlist.movies.splice(index, 1);
+        set_watchlist(watchlist);
+    });
+    
+    // add finished button and label to the movie info
+    movie_info.appendChild(remove_button);
+    movie_info.appendChild(button_label);
+
     // add finished movie info to movie card
     movie_card.appendChild(movie_info);
 
@@ -102,4 +122,18 @@ function imdbId_is_present_in_watchlist(imdbId)
         }
     }
     return false;
+}
+
+function index_of_imdbId_in_watchlist(imdbId)
+{
+    const watchlist = get_or_create_watchlist();
+    for (let i = 0; i < watchlist.movies.length; i++)
+    {
+        const movie = watchlist.movies[i];
+        if (movie._imdbId === imdbId)
+        {
+            return i;
+        }
+    }
+    return -1;
 }

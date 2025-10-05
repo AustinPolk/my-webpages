@@ -72,7 +72,7 @@ main {
   font-size: 12px;
 }
 
-button.add-btn {
+button.remove-btn {
   background: #ffcc00;
   border: none;
   padding: 0rem 0.2rem;

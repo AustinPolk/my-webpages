@@ -41,7 +41,9 @@
 
     for (let i = 0; i < watchlist.movies.length; i++)
     {
-      const movie_card = create_watchlist_movie_card(watchlist.movies[i]);
+      const movie_card = create_watchlist_movie_card(watchlist.movies[i], (movie_card) => {
+        watchlist_section.removeChild(movie_card);
+      });
       watchlist_section.appendChild(movie_card); 
     }
 
